@@ -9,8 +9,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{AlbumsController, CategoryController, GalleryController, PhotosController};
 
 Route::get('/', function () {
-    return redirect()->route('gallery.index');
+   return View ('welcome');
 });
+
+Route::get('/users', function () {
+    return View('users');
+ });
 
 Route::middleware(['auth'])->prefix('dashboard')->group(function () {
 
